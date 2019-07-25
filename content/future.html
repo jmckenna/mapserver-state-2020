@@ -1,0 +1,65 @@
+<section data-markdown>
+    <script type="text/template">
+        ## Ongoing and Future Development
+
+        Major development is first submitted as a RFC
+
+        [Request for Comments](https://mapserver.org/development/rfc/index.html)
+
+        Discussions at the [Minnesota Code Sprint 2019](https://github.com/mapserver/mapserver/wiki/Minnesota-2019-Codesprint)
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        [MS RFC 123: Support for MapML output in MapServer](https://mapserver.org/development/rfc/ms-rfc-123.html)
+
+        *Daniel Morissette*
+
+        - The W3C Maps for HTML Community Group is working to define a **map** HTML element
+        - Enables `text/mapml` as a new format offering for WMS and WFS
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        [MS RFC 124: Improving SLD Support in MapServer](https://mapserver.org/development/rfc/ms-rfc-124.html)
+
+        *Jérome Boué*
+
+        * Fill in gaps in SLD support in MapServer
+        * Following issues are to be addressed:
+        <ul style="font-size:smaller">
+            <li> Arithmetic expressions</li>
+            <li> WMS GetStyles request</li>
+            <li> Style layering (painters model)</li>
+            <li> Mark or ExternalGraphic in LineSymbolizer</li>
+            <li> LineSymbolizer and PolygonSymbolizer in same Rule</li>
+            <li> UserLayer element</li>
+        </ul>
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        [MS RFC 121: PostgreSQL and ElasticSearch Support in MapCache dimensions](https://mapserver.org/development/rfc/ms-rfc-121.html)
+
+        *Jérome Boué*
+
+        - Currently second-level dimensions (for example time) can be stored in SQLite
+        - This proposal will allow extra dimensions to be stored in PostgreSQL and ElasticSearch
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        [MS RFC 122: A Tool for Coverage Analysis of MapCache Multi-SQLite Caches](https://mapserver.org/development/rfc/ms-rfc-122.html)
+
+        *Jérome Boué*
+
+        - A new command-line tool ` mapcache_detail`
+        - find areas of missing tiles in a cache
+        - reports in JSON output
+
+        <img class="plain" src="images/mapcache-detail.png" style="width:20%;" />
+
+        *Thanks to funding from the French Ministry of Defence*
+    </script>
+</section>
