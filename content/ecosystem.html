@@ -5,54 +5,90 @@
 </section>
 <section data-markdown>
     <script type="text/template">
-        ### ms4w
-    </script>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ### GISInternals
-    </script>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ### Debian Packaging
-    </script>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ### OSGeoLive
+        ### [OSGeoLive 13](https://live.osgeo.org)
 
-        - MapCache 1.6.1 added in OSGeoLive13
-        - Overview
-        - QuickStart - with a MapServer backend
-
+        - MapCache 1.6.1 added
+        - MapCache Overview and QuickStart
         - MapServer updated to 7.4.1
-        - GeoExt demo
-    </script>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ### EC2
-    </script>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ### GeoMoose
-    </script>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ### AWS and Lambda
+        - [GeoExt QuickStart](https://osgeo.github.io/OSGeoLive-doc/en/quickstart/geoext_quickstart.html)
+        - [GeoMoose QuickStart](https://live.osgeo.org/en/quickstart/geomoose_quickstart.html)
 
-        - CGI back in fashion!
+        <img class="plain" src="images/osgeo_live.png" style="background: none;" />
+    </script>
+</section>
+<section data-markdown data-background="images/Debian-logo.jpg" data-background-opacity="0.1" data-background-size="60%">
+    <script type="text/template">
+        ### [Debian Packaging](https://packages.debian.org/source/jessie/mapserver)
+        ```bash
+        apt-get install cgi-mapserver mapserver-bin
+        ```
+
+        - Maintained by Sebastiaan Couwenberg
+        - Packages also used by Ubuntu and Knoppix
+
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        ### [MapServer for Windows](https://ms4w.com/)
+
+        * [MS4W version 4.0 2019-03-12](https://ms4w.com/HISTORY.html)
+        * PHP 7.2
+        * Python 3.7
+        * Mono C# support
+
+        Maintained by Jeff McKenna, Gateway Geomatics
+
+        <a href="https://gatewaygeomatics.com/">
+            <img class="plain" src="images/gatewaygeomatics-logo-small.jpg" style="background: none;" />
+        </a>
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        ### [GISInternals](https://www.gisinternals.com/)
+
+        - Compiled versions of MapServer and GDAL for various Visual Studio releases
+        - Windows development kits to compile MapServer by yourself
+        - Used for continuous integration for GDAL and MapServer
+
+        Maintained by Tamas Szekeres, [GISInternals](https://www.gisinternals.com)
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        ### GC2/Vidi
+
+        - Quickly build a spatial data infrastructure
+        - Easily deploy PostGIS, MapServer, MapCache, and GDAL
+        - Configure using the browser - see the [GC2 Workshop](https://github.com/mapcentia/GC2-Vidi-workshop)
+        - Martin Høgh talk - "GC2/Vidi: What’s new in the spatial data infrastructure project"
+
+        <a href="http://www.mapcentia.com">
+            <img class="plain" src="images/mapcentialogo.png" style="background: none;" />
+        </a>
+    </script>
+</section>
+<section data-markdown data-background-color="#fff" data-background="images/gc2_mapserver_config.png"></section>
+<section data-markdown data-background="images/lambda.png" data-background-opacity="0.3" data-background-size="40%">
+    <script type="text/template">
+        ### MapServer and AWS Lambda
+
+        - [SolSpec Tech Talk: Bitner Goes Serverless](https://solspec.solutions/solspec-tech-talk-bitner-goes-serverless/)
+        - CGI is back in fashion!
         - One request and finished
 
-        TODO add link
+        > MapServer is like a cockroach, it never dies..
+
+        #### [David Bitner, SolSpec](https://solspec.solutions/)
+
     </script>
 </section>
 <section data-markdown>
     <script type="text/template">
         ### mappyfile
+
+        TODO
     </script>
 </section>
 
