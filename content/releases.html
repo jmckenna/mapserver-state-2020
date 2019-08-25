@@ -20,10 +20,12 @@
 </section>
 <section data-markdown>
     <script type="text/template">
-        ### New Features
+        ### New Feature Highlights
 
         * [Mapbox Vector Tile (MVT) Support](https://mapserver.org/development/rfc/ms-rfc-119.html)
+        * [Chainable compositing filters](https://mapserver.org/development/rfc/ms-rfc-113.html)
         * MapScript support for Python 3 and PHP7
+        * [OGC FILTER parameter in WMS requests](https://mapserver.org/development/rfc/ms-rfc-118.html)
         * [INSPIRE download service support for WCS 2.0](https://mapserver.org/development/rfc/ms-rfc-120.html)
         * 735 commits since the 7.0 release
 
@@ -33,6 +35,7 @@
     <script type="text/template">
         ### Vector Tiles
 
+        * Implemented by [Thomas Bonfort](https://github.com/tbonfort/) and [Steve Lime](https://github.com/sdlime)
         * [MapServer Mapbox-GL Demo](https://github.com/sdlime/mvt-demo)
 
     </script>
@@ -41,13 +44,12 @@
     <script type="text/template">
         Support can be added in a single block:
 
-```
-OUTPUTFORMAT
-NAME "mvt"
-DRIVER MVT
-END
-```
-
+        ```
+        OUTPUTFORMAT
+        NAME "mvt"
+        DRIVER MVT
+        END
+        ```
     </script>
 </section>
 <section data-markdown>
@@ -70,33 +72,46 @@ END
     <script type="text/template">
         ### Vector Tiles
 
-        * Access similar to a WMS - same parameters 
-          e.g. `http://localhost/mapserver/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=mvt&LAYERS=mylayer`
-        * Or using {x}{y}{z} URL formats
-          e.g. `http://localhost/mapserver/?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=mylayer&map.imagetype=mvt`
+        * Access using using {x}{y}{z} URL formats
+        e.g. `http://localhost/mapserver/?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=mylayer&map.imagetype=mvt`
+        * Or with a WMS interface
+        e.g. `http://localhost/mapserver/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=mvt&LAYERS=mylayer`
 
     </script>
 </section>
-<section data-markdown>
+<section data-markdown data-background="images/blending.png" data-background-opacity="0.4">
     <script type="text/template">
-        ### MapScript
+        ### Chainable Compositing Filters
 
-        - PHP7
+        * Implemented by [Thomas Bonfort](https://github.com/tbonfort/)
+        * Can combine blurring, shadows, opacity, grayscale in a single layer 
+          using the [COMPOSITE(https://mapserver.org/mapfile/composite.html)] block
 
-        TODO
-
+        ```
+        COMPOSITE
+            COMPFILTER "whiten()"
+            COMPFILTER "blur(5)"
+            COMPOP "soft-light"
+            OPACITY 50
+        END
+        ```
     </script>
 </section>
-<section data-markdown>
+<section data-markdown data-background-color="#fff" data-background="images/geoportail.png">
     <script type="text/template">
-        ### MapScript Python
+        <div class="meta">
+            Géoportail du SITN<a href="https://sitn.ne.ch/">https://sitn.ne.ch/</a>
+        </div>
+    </script>
+</section>
+<section data-markdown data-background="images/python.png" data-background-opacity="0.2" data-background-size="50%">
+    <script type="text/template">
+        ### [Python MapScript Updates](https://github.com/mapserver/mapserver/wiki/Python-MapScript-Updates-2018)
 
-        - Geopy interface
-        - Python3
-        - Jupyter Notebook
-        - PyPI
-
-        TODO
-
+        - Python 3 support
+        - Python MapScript test suite (> 300 tests) fixed and added to CI
+        - Online [ Jupyter Notebook](https://mybinder.org/v2/gh/geographika/OSGeoLive12-Notebooks/master?filepath=jupyter%2Fquickstarts%2Fmapscript-quickstart.ipynb)
+        - MapScript added to [PyPI](https://pypi.org/project/mapscript/) for Windows
+        - [geo_interface](https://gist.github.com/sgillies/2217756) implemented for geometry classes
     </script>
 </section>
