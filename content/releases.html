@@ -41,20 +41,21 @@
     <script type="text/template">
         ### 7.6 Feature Highlights
 
-        * [PROJ 6.0 support](https://mapserver.org/development/rfc/ms-rfc-126.html)
+        * [PROJ 6.0 API support](https://mapserver.org/development/rfc/ms-rfc-126.html)
         * [Improved SLD support](https://mapserver.org/development/rfc/ms-rfc-124.html)
         * [Connection options support](https://mapserver.org/development/rfc/ms-rfc-125.html)
         * PointZM data support (X,Y,Z,M coordinates) is now enabled by default
         * Many bug fixes and small enhancements
     </script>
 </section>
-<section data-markdown data-background="images/vector_tiles.png" data-background-opacity="0.3">
+<section data-markdown>
     <script type="text/template">
-        ### Vector Tiles
+        ### GDAL and PROJ
 
-        * Implemented by [Thomas Bonfort](https://github.com/tbonfort/) and [Steve Lime](https://github.com/sdlime)
-        * [MapServer Mapbox-GL Demo](https://github.com/sdlime/mvt-demo)
-
+        #### Optimal Combinations/Notes
+        * MapServer 7.6 + GDAL 2.4.4 + PROJ 5.2.0
+        * MapServer 7.6 + GDAL 3.1.0 + PROJ 7.0.1
+        * PROJ 6 API is slower and demands FastCGI 
     </script>
 </section>
 <section data-markdown>
