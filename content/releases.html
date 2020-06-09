@@ -42,8 +42,8 @@
         ### 7.6 Feature Highlights
 
         * [PROJ 6.0 API support](https://mapserver.org/development/rfc/ms-rfc-126.html)
-        * [Improved SLD support](https://mapserver.org/development/rfc/ms-rfc-124.html)
         * [Connection options support](https://mapserver.org/development/rfc/ms-rfc-125.html)
+        * [Improved SLD support](https://mapserver.org/development/rfc/ms-rfc-124.html)
         * PointZM data support (X,Y,Z,M coordinates) is now enabled by default
         * Many bug fixes and small enhancements
     </script>
@@ -60,29 +60,39 @@
 </section>
 <section data-markdown>
     <script type="text/template">
-        Support can be added in a single block:
+        ### Connection Options
 
         ```
-        OUTPUTFORMAT
-        NAME "mvt"
-        DRIVER MVT
-        END
+LAYER
+  NAME "test"
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/nested_attrs.geojson"
+  CONNECTIONOPTIONS
+    "FLATTEN_NESTED_ATTRIBUTES" "YES"
+  END
+  ...
+END
         ```
     </script>
 </section>
 <section data-markdown>
     <script type="text/template">
-        - PBF = Protocolbuffer Binary Format
-        - Available in GISInternals, Debian, and MS4W releases
-
-        ```bash
-        user@osgeolive:~$ mapserv -v
-        MapServer version 7.4.1 OUTPUT=PNG OUTPUT=JPEG OUTPUT=KML SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE
-        SUPPORTS=CAIRO SUPPORTS=SVG_SYMBOLS SUPPORTS=RSVG SUPPORTS=ICONV SUPPORTS=FRIBIDI SUPPORTS=WMS_SERVER
-        SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER
-        SUPPORTS=FASTCGI SUPPORTS=THREADS SUPPORTS=GEOS
-        SUPPORTS=PBF
-        INPUT=JPEG INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE
+        ### SLD Improvements - RENDERMODE    
+        ```
+LAYER
+  NAME "test"
+  CONNECTION "data/myshpfile"
+  PROCESSING "RENDERMODE=ALL_MATCHING_CLASSES"
+  CLASS
+    ...
+  END
+  CLASS
+    ...
+  END
+  CLASS
+    ...
+  END
+END
         ```
     </script>
 </section>
