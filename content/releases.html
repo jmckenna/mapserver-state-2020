@@ -1,9 +1,9 @@
 <section data-markdown>
     <script type="text/template">
         ## MapServer Releases and New Features
-
-        * Last [Project Status Report](https://av.tib.eu/media/20414) FOSS4G 2016 Bonn
-        * [2015 Status Report](http://schpidi.github.io/foss4g-e_2015_mapserver_status) FOSS4G Europe
+        <img class="plain" src="images/mapserver-users-meeting-2003.png" style="background: none;" />
+        <!--* Last [Project Status Report](https://av.tib.eu/media/20414) FOSS4G 2016 Bonn -->
+        <!--* [2015 Status Report](http://schpidi.github.io/foss4g-e_2015_mapserver_status) FOSS4G Europe -->
     </script>
 </section>
 <section data-markdown>
@@ -15,7 +15,7 @@
         * 2020-05-08 - [MapServer 7.6.0](https://mapserver.org/development/announce/7-6.html)
         * 2019-05-15 - [MapServer 7.4.0](https://mapserver.org/development/announce/7-4.html)
         * 2018-07-27 - [MapServer 7.2.0](https://mapserver.org/development/announce/7-2.html)
-        * 735 commits since the 7.0 release
+        * 1,464 commits, 3,708 files changed since the 7.0 release on 2015-07-24
 
         ---
 	
@@ -45,7 +45,7 @@
         * [Connection options support](https://mapserver.org/development/rfc/ms-rfc-125.html)
         * [Improved SLD support](https://mapserver.org/development/rfc/ms-rfc-124.html)
         * PointZM data support (X,Y,Z,M coordinates) is now enabled by default
-        * Many bug fixes and small enhancements
+        * Many bug fixes and small enhancements (Windows file paths with special chars, WMS essential layers)
     </script>
 </section>
 <section data-markdown>
@@ -55,7 +55,8 @@
         #### Optimal Combinations/Notes
         * MapServer 7.6 + GDAL 2.4.4 + PROJ 5.2.0
         * MapServer 7.6 + GDAL 3.1.0 + PROJ 7.0.1
-        * PROJ 6 API is slower and demands FastCGI 
+         * common issue during server upgrade: Spatialite & GeoTIFF still pointing to old PROJ
+         * PROJ 6 API is slower and demands FastCGI 
     </script>
 </section>
 <section data-markdown>
@@ -141,5 +142,14 @@ END
         - Online [Jupyter Notebook](https://mybinder.org/v2/gh/geographika/OSGeoLive12-Notebooks/master?filepath=jupyter%2Fquickstarts%2Fmapscript-quickstart.ipynb)
         - MapScript added to [PyPI](https://pypi.org/project/mapscript/) for Windows
         - [geo_interface](https://gist.github.com/sgillies/2217756) implemented for geometry classes
+    </script>
+</section>
+<section data-markdown data-background="images/php.png" data-background-opacity="0.2" data-background-size="50%">
+    <script type="text/template">
+        ### PHP7 through SWIG MapScript
+
+        - PHP7 brings huge speed improvements
+        - much effort for the MapServer 7.4 and 7.6 releases on bringing PHP7 into SWIG MapScript
+        - PHP MapScript still very popular & powerful (MS4W 4.x leverages PHP7 through SWIG)
     </script>
 </section>
